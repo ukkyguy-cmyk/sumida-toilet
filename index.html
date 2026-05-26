@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公衆トイレ改築 コスト削減資料集</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #e8e0d0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: #0a0a0a;
+    border-bottom: 1px solid #c9a84c33;
+    padding: 24px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .site-header .label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #c9a84c;
+  }
+  .site-header h1 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #e8e0d0;
+    letter-spacing: 2px;
+  }
+  .doc-meta {
+    margin-left: auto;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 1px;
+  }
+
+  /* NAV TABS */
+  .tab-nav {
+    display: flex;
+    border-bottom: 1px solid #1e1e1e;
+    background: #0d0d0d;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 16px 28px;
+    background: none;
+    border: none;
+    color: #555;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  .tab-btn.active {
+    color: #c9a84c;
+    border-bottom-color: #c9a84c;
+  }
+  .tab-btn:hover { color: #e8e0d0; }
+
+  /* PANELS */
+  .panel { display: none; padding: 48px 32px; max-width: 900px; margin: 0 auto; }
+  .panel.active { display: block; animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SECTION TITLES */
+  .section-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #c9a84c;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #e8e0d0;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1e1e1e;
+    letter-spacing: 1px;
+  }
+
+  /* CARDS */
+  .card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 2px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+  }
+  .card:hover { border-color: #c9a84c44; }
+  .card-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .card p { font-size: 13px; color: #aaa; margin-bottom: 8px; }
+  .card ul { padding-left: 16px; }
+  .card ul li { font-size: 13px; color: #aaa; margin-bottom: 4px; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin-bottom: 32px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead tr {
+    background: #1a1a1a;
+    border-bottom: 2px solid #c9a84c;
+  }
+  thead th {
+    padding: 14px 16px;
+    text-align: left;
+    color: #c9a84c;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  tbody tr {
+    border-bottom: 1px solid #1a1a1a;
+    transition: background 0.2s;
+  }
+  tbody tr:hover { background: #111; }
+  tbody td {
+    padding: 14px 16px;
+    color: #ccc;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .tag {
+    display: inline-block;
+    background: #c9a84c18;
+    border: 1px solid #c9a84c44;
+    color: #c9a84c;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin: 2px 2px 2px 0;
+    white-space: nowrap;
+  }
+  .tag.green {
+    background: #2a4a2a;
+    border-color: #4a8a4a44;
+    color: #6ab06a;
+  }
+  .tag.blue {
+    background: #1a2a4a;
+    border-color: #3a5a8a44;
+    color: #6a8aba;
+  }
+  .highlight { color: #c9a84c; font-weight: 700; }
+
+  /* COST SUMMARY BOX */
+  .summary-box {
+    background: #0f0f0f;
+    border: 1px solid #c9a84c44;
+    border-left: 3px solid #c9a84c;
+    padding: 24px 28px;
+    margin: 32px 0;
+    border-radius: 2px;
+  }
+  .summary-box .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #c9a84c;
+    margin-bottom: 12px;
+  }
+  .summary-box p { font-size: 13px; color: #bbb; margin-bottom: 6px; }
+  .summary-box .big { font-size: 20px; font-weight: 700; color: #e8e0d0; }
+
+  /* REQUIREMENT ITEMS */
+  .req-item {
+    background: #0f0f0f;
+    border: 1px solid #1e1e1e;
+    border-radius: 2px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+  }
+  .req-item .req-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #c9a84c;
+    margin-bottom: 6px;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .req-item .req-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #e8e0d0;
+    margin-bottom: 8px;
+  }
+  .req-item .req-body {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.8;
+  }
+  .code-block {
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-radius: 2px;
+    padding: 16px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #9ab;
+    margin: 12px 0;
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+
+  /* SUBSIDY ITEM */
+  .subsidy-item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 20px;
+    margin-bottom: 24px;
+  }
+  .subsidy-bar { background: #c9a84c; border-radius: 2px; }
+  .subsidy-content .s-title { font-weight: 700; font-size: 14px; color: #e8e0d0; margin-bottom: 6px; }
+  .subsidy-content .s-rate {
+    display: inline-block;
+    background: #c9a84c;
+    color: #0a0a0a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 2px 10px;
+    margin-bottom: 10px;
+  }
+  .subsidy-content p { font-size: 12px; color: #888; line-height: 1.7; }
+
+  /* COMBO BOX */
+  .combo-box {
+    background: linear-gradient(135deg, #111 0%, #0d0d0d 100%);
+    border: 1px solid #c9a84c66;
+    border-radius: 2px;
+    padding: 32px;
+    margin: 32px 0;
+  }
+  .combo-box .combo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #c9a84c;
+    margin-bottom: 20px;
+  }
+  .combo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .combo-key {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+    min-width: 60px;
+  }
+  .combo-val {
+    font-size: 13px;
+    color: #e8e0d0;
+    font-weight: 700;
+  }
+  .combo-row .arrow { color: #c9a84c; font-size: 10px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 48px 32px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 11px;
+    color: #333;
+    letter-spacing: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div id="main-content-inner">
+<header class="site-header">
+  <div>
+    <div class="label">SUMIDA WARD PARKS DIVISION</div>
+    <h1>公衆トイレ改築 ／ コスト削減資料集</h1>
+  </div>
+  <div class="doc-meta">小規模（1〜2ブース）· 躯体コスト優先</div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('cost')">① 概算比較表</button>
+  <button class="tab-btn" onclick="switchTab('maker')">② メーカー一覧</button>
+  <button class="tab-btn" onclick="switchTab('subsidy')">③ 補助金整理</button>
+  <button class="tab-btn" onclick="switchTab('spec')">④ 要求水準書骨格</button>
+</nav>
+
+<!-- ============================================================ -->
+<!-- TAB 1: 概算比較表 -->
+<!-- ============================================================ -->
+<div id="tab-cost" class="panel active">
+  <div class="section-eyebrow">DOCUMENT 01</div>
+  <div class="section-title">構造別 概算比較表（1〜2ブース）</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>構造形式</th>
+          <th>躯体費目安</th>
+          <th>設備込み総額目安</th>
+          <th>現場工期</th>
+          <th>耐用年数</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="highlight">RC造</span><br><small>（現状多い）</small></td>
+          <td>800〜1,200万円</td>
+          <td>1,200〜1,800万円</td>
+          <td>3〜4ヶ月</td>
+          <td>50年超</td>
+          <td>耐久性最高・コスト最高</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">軽量鉄骨ユニット</span></td>
+          <td>500〜800万円</td>
+          <td>800〜1,200万円</td>
+          <td>1〜2ヶ月</td>
+          <td>30〜40年</td>
+          <td><span class="tag">おすすめ</span> 工場製作率高</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">メーカー既製ユニット</span></td>
+          <td>200〜400万円</td>
+          <td>300〜600万円</td>
+          <td>1〜2週間</td>
+          <td>20〜30年</td>
+          <td><span class="tag">最安</span> デザイン自由度低</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">CLT＋軽鉄ハイブリッド</span></td>
+          <td>600〜900万円</td>
+          <td>900〜1,300万円</td>
+          <td>1〜2ヶ月</td>
+          <td>30〜50年</td>
+          <td><span class="tag green">補助金対象</span> 木質化加点</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">コンテナ転用（建確取得）</span></td>
+          <td>300〜500万円</td>
+          <td>600〜900万円</td>
+          <td>2〜4週間</td>
+          <td>20〜30年</td>
+          <td><span class="tag blue">事例増加中</span></td>
+        </tr>
+        <tr>
+          <td><span class="highlight">PCa（プレキャスト）</span></td>
+          <td>700〜1,000万円</td>
+          <td>1,000〜1,500万円</td>
+          <td>2〜4週間</td>
+          <td>50年超</td>
+          <td>現場打ちコンクリート不要</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="summary-box">
+    <div class="title">RECOMMENDED COMBINATION</div>
+    <p>財源・工期・景観のバランスで最も現実的な組み合わせ</p>
+    <div class="combo-box" style="margin:16px 0 0;">
+      <div class="combo-row">
+        <span class="combo-key">構造</span>
+        <span class="arrow">▶</span>
+        <span class="combo-val">軽量鉄骨ユニット＋木目外装パネル</span>
+      </div>
+      <div class="combo-row">
+        <span class="combo-key">財源</span>
+        <span class="arrow">▶</span>
+        <span class="combo-val">都市公園補助（1/3）＋森林環境譲与税（木質外装分）</span>
+      </div>
+      <div class="combo-row">
+        <span class="combo-key">発注</span>
+        <span class="arrow">▶</span>
+        <span class="combo-val">デザインビルド＋VE条項付き</span>
+      </div>
+      <div class="combo-row">
+        <span class="combo-key">加点</span>
+        <span class="arrow">▶</span>
+        <span class="combo-val">おむつ交換台でこどもまんなか交付金対象化</span>
+      </div>
+    </div>
+    <p style="margin-top:16px;">⇒ <span class="highlight">実質負担 40〜50% 削減</span>の可能性</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">注意事項</div>
+    <ul>
+      <li>上記金額は設計・監理費を含まない工事費目安（±30%の幅あり）</li>
+      <li>既存基礎・配管の再利用可否で大きく変動する</li>
+      <li>設備（給排水・電気・換気）は構造形式によらず200〜400万円程度を別途見込む</li>
+      <li>バリアフリー対応（車椅子対応個室）が必須の場合は面積・設備費が増加</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 2: メーカー一覧 -->
+<!-- ============================================================ -->
+<div id="tab-maker" class="panel">
+  <div class="section-eyebrow">DOCUMENT 02</div>
+  <div class="section-title">主要メーカー・サプライヤー一覧（公共納品実績あり）</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>メーカー名</th>
+          <th>製品カテゴリ</th>
+          <th>特徴・実績</th>
+          <th>価格帯目安</th>
+          <th>問合せ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="highlight">トーヨーマテラン</span></td>
+          <td><span class="tag">RCユニット</span><span class="tag">公園専門</span></td>
+          <td>RCユニットトイレの業界リーディングカンパニー。内外装から給排水設備まで工場完成→現場据付は半日〜1日。松阪市東口公園プロポーザル最高点（84.07点）受注実績。公共工事比率約70%。</td>
+          <td>800〜1,500万円</td>
+          <td>matelan.co.jp</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">信建工業</span></td>
+          <td><span class="tag">公園トイレ</span><span class="tag">景観施設</span></td>
+          <td>公園トイレ・防災施設・景観施設を設計〜デザイン〜製造〜施工まで一括対応。東京都港区・芝公園など全国実績多数。360度VRビューでの事前確認サービスあり。</td>
+          <td>700〜1,500万円</td>
+          <td>shinken-kogyo.co.jp</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">株式会社クラフト</span></td>
+          <td><span class="tag">PCa造</span><span class="tag">公共特化</span></td>
+          <td>1982年創業。公共トイレ専門で設計・製造・販売一貫。PCa（プレキャストRC）造が主力で高品質・工期短縮に貢献。「環境保全×ユニバーサルデザイン」を基本理念に30年以上の実績。</td>
+          <td>600〜1,200万円</td>
+          <td>toilet.co.jp</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">アダチ造形社</span></td>
+          <td><span class="tag">ユニットトイレ</span><span class="tag">公園</span></td>
+          <td>トイレ製造45年の実績。工場内で電気・衛生器具・配管工事完了・通電・水圧検査済みのものを搬入。簡易水洗・バイオ式・河川敷移動可能型など幅広いラインナップ。</td>
+          <td>400〜1,000万円</td>
+          <td>a-zoukei.com</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">トシカン</span></td>
+          <td><span class="tag">自由設計</span><span class="tag">公共</span></td>
+          <td>公園に合わせた自由設計が特長のユニットトイレ専門メーカー。建設コンサルとしての設計協力も可。費用を抑えながらデザイン性の高い公衆トイレを提案。見積り・打合せ費用込み対応。</td>
+          <td>300〜900万円</td>
+          <td>toshikan.net</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">H.O.C</span></td>
+          <td><span class="tag">ユニット</span><span class="tag">景観融合</span></td>
+          <td>「サイコロトイレ」シリーズが特長。シンプルでキュービックな外観で景観融合性が高く、設備一体完成品を納入。1,300角大型トップライトで明るい室内を実現。躯体のみ仕様にも対応。積算資料公表価格掲載。</td>
+          <td>300〜800万円</td>
+          <td>hocc.jp</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">三晃商事</span></td>
+          <td><span class="tag">屋外トイレ</span><span class="tag">河川敷</span></td>
+          <td>公園・河川敷などの公衆トイレ・仮設トイレ・屋外トイレ・簡易トイレユニットを専門とする東京都小金井市のメーカー。近郊自治体への納品実績あり。</td>
+          <td>200〜600万円</td>
+          <td>sanko-toilet.jp</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">三協フロンテア</span></td>
+          <td><span class="tag">ユニットハウス</span><span class="tag">本設対応</span></td>
+          <td>スチールユニット建築の大手。公共施設全般の実績豊富。建築確認取得サポートあり。工場完成品を搬送設置。木目外装オプションあり。</td>
+          <td>400〜900万円</td>
+          <td>地域営業所</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">ナガワ</span></td>
+          <td><span class="tag">ユニットハウス</span><span class="tag">公共向け</span></td>
+          <td>公園・道の駅・学校向けの実績多数。木目外装オプション・リース対応も可。全国営業所網あり。</td>
+          <td>350〜800万円</td>
+          <td>全国営業所</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">発注時の比較ポイント</div>
+    <ul>
+      <li><strong style="color:#e8e0d0;">工場製作率</strong>：現場作業をどこまで工場に移せるか（高いほどコスト安定）</li>
+      <li><strong style="color:#e8e0d0;">建築確認対応</strong>：基礎定着・建確取得の実績があるか</li>
+      <li><strong style="color:#e8e0d0;">補助金実績</strong>：森林環境譲与税・国交省補助の申請サポート経験</li>
+      <li><strong style="color:#e8e0d0;">維持管理体制</strong>：部品供給・定期点検の保証期間</li>
+      <li><strong style="color:#e8e0d0;">BF対応</strong>：車椅子対応個室・オストメイト対応の標準化状況</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 3: 補助金整理 -->
+<!-- ============================================================ -->
+<div id="tab-subsidy" class="panel">
+  <div class="section-eyebrow">DOCUMENT 03</div>
+  <div class="section-title">活用可能な補助金・財源 整理</div>
+
+  <div class="subsidy-item">
+    <div class="subsidy-bar"></div>
+    <div class="subsidy-content">
+      <div class="s-title">① 森林環境譲与税</div>
+      <span class="s-rate">木質化財源 最優先</span>
+      <p>市区町村に直接交付される税財源。「木材利用」であれば公共施設への適用可。外装の木質パネル・CLT屋根など部分適用でもOK。墨田区の担当部署（林務・環境系）と公園課の予算調整が必要。財政局への説明材料として最も使いやすい財源。</p>
+    </div>
+  </div>
+
+  <div class="subsidy-item">
+    <div class="subsidy-bar"></div>
+    <div class="subsidy-content">
+      <div class="s-title">② 都市公園安全・安心対策緊急総合支援事業（国土交通省）</div>
+      <span class="s-rate">補助率 1/3〜1/2</span>
+      <p>都市公園内の施設改修に広く適用可能。トイレ改築は対象になりやすい。「バリアフリー化・防犯性向上・老朽化対策」を前面に出すと採択率UP。都道府県経由の申請が必要。</p>
+    </div>
+  </div>
+
+  <div class="subsidy-item">
+    <div class="subsidy-bar"></div>
+    <div class="subsidy-content">
+      <div class="s-title">③ こどもまんなか交付金（内閣府）</div>
+      <span class="s-rate">子育て支援型公園整備</span>
+      <p>乳幼児対応（おむつ交換台・授乳スペース・ベビーチェア）を盛り込むと対象化されるケースあり。近年、内閣府系の補助として公園トイレが対象化されてきている。設計段階から「子育て支援機能」を明示することが重要。</p>
+    </div>
+  </div>
+
+  <div class="subsidy-item">
+    <div class="subsidy-bar"></div>
+    <div class="subsidy-content">
+      <div class="s-title">④ 東京都バリアフリー推進事業（東京都福祉局）</div>
+      <span class="s-rate">トイレ単体で適用実績あり</span>
+      <p>オストメイト対応・車椅子対応個室の整備に対する補助。東京都内の自治体向け。公園トイレ単体での申請実績あり。設計者に「BF改修費の切り出し」を依頼することで申請しやすくなる。</p>
+    </div>
+  </div>
+
+  <div class="subsidy-item">
+    <div class="subsidy-bar"></div>
+    <div class="subsidy-content">
+      <div class="s-title">⑤ 景観・無電柱化関連補助（東京都）</div>
+      <span class="s-rate">外構と一体での申請</span>
+      <p>外構・広場整備と一体で計画する場合に適用可能なケースあり。トイレ単体では対象外になることが多いため、公園全体の整備計画と連動させる必要がある。</p>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="title">財源スタック試算（1,000万円工事の場合）</div>
+    <p>都市公園補助（1/3）　→　約 <span class="highlight">▲333万円</span></p>
+    <p>森林環境譲与税（木質外装分100万円）　→　約 <span class="highlight">▲100万円</span></p>
+    <p>こどもまんなか交付金（BF・子育て機能）　→　約 <span class="highlight">▲100万円</span></p>
+    <p style="margin-top:12px; padding-top:12px; border-top:1px solid #2a2a2a;">
+      区の実質負担　→　<span class="big">約 467万円</span>（▲53%削減）
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 4: 要求水準書骨格 -->
+<!-- ============================================================ -->
+<div id="tab-spec" class="panel">
+  <div class="section-eyebrow">DOCUMENT 04</div>
+  <div class="section-title">要求水準書 骨格（設計者・施工者向け）</div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 01</div>
+    <div class="req-title">基本方針</div>
+    <div class="req-body">
+      <div class="code-block">本工事は工場製作比率を最大化し、
+現場作業を基礎工事・設備接続・外装仕上げに限定することを
+設計・施工の基本方針とする。</div>
+      受注者は工事着手前にVE提案を行うことができる。採用されたVE提案による削減額の一定割合を受注者に還元する（割合は別途協議）。
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 02</div>
+    <div class="req-title">構造・躯体に関する要求</div>
+    <div class="req-body">
+      <ul style="padding-left:16px; font-size:13px; color:#888; line-height:2;">
+        <li>構造形式は「軽量鉄骨ユニット造または同等以上の工場製作率を有する構造」とし、工場製作率80%以上を目標とする</li>
+        <li>基礎は既存基礎・配管位置を最大限活用した計画とすること</li>
+        <li>外装材は木質系材料を優先検討し、地域材活用の場合は提案書に明記すること</li>
+        <li>耐用年数は30年以上を確保すること</li>
+        <li>設計耐震性能：耐震等級2以上</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 03</div>
+    <div class="req-title">機能要件</div>
+    <div class="req-body">
+      <ul style="padding-left:16px; font-size:13px; color:#888; line-height:2;">
+        <li>個室数：男性用1・女性用1・多機能トイレ1（計3室）を基本とする</li>
+        <li>多機能トイレ：オストメイト対応・ベビーチェア・おむつ交換台・手すり完備</li>
+        <li>バリアフリー法・都市公園条例に準拠した計画とすること</li>
+        <li>防犯：外部からの視認性確保（見通しのよい配置）・照度基準○lux以上</li>
+        <li>換気：自然換気を基本とし、機械換気を補完として組み合わせること</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 04</div>
+    <div class="req-title">工程・搬入計画</div>
+    <div class="req-body">
+      <ul style="padding-left:16px; font-size:13px; color:#888; line-height:2;">
+        <li>現場作業期間：○週間以内（公園利用者への影響を最小化）</li>
+        <li>大型車両搬入ルートおよびクレーン設置計画を提案書に含めること</li>
+        <li>工事中の仮設トイレ設置計画を提案書に含めること</li>
+        <li>工事期間中の公園利用者動線確保計画を明示すること</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 05</div>
+    <div class="req-title">維持管理・コスト</div>
+    <div class="req-body">
+      <ul style="padding-left:16px; font-size:13px; color:#888; line-height:2;">
+        <li>10年間のランニングコスト試算（清掃・設備点検・部品交換費）を提案書に含めること</li>
+        <li>主要部品の供給可能期間を明示すること（最低15年以上）</li>
+        <li>日常清掃のしやすさを設計に反映すること（角部の少ない内装・防汚塗装等）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-label">SECTION 06</div>
+    <div class="req-title">補助金対応・提案書記載事項</div>
+    <div class="req-body">
+      <ul style="padding-left:16px; font-size:13px; color:#888; line-height:2;">
+        <li>木質系材料を使用する場合、地域材（東京都産・国産材優先）の産地証明を取得すること</li>
+        <li>バリアフリー改修費・木質化費・子育て支援機能費を工事費内で項目別に明示すること（補助金申請のための費用切り出し）</li>
+        <li>VE提案がある場合は設計段階で書面にて提出すること</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="title">発注方式の推奨</div>
+    <p><span class="highlight">デザインビルド（設計施工一括）</span>を基本とし、工場製作型ユニットに最も向いている発注方式として採用する。</p>
+    <p style="margin-top:8px;">または<span class="highlight">性能発注</span>として「個室数・BF基準・耐用年数○年」のみ指定し、構造・材料は受注者の提案に委ねる方式も有効。</p>
+  </div>
+</div>
+
+<footer>
+  SUMIDA WARD PARKS DIVISION · 公園課 内部資料 · 改築検討用
+</footer>
+</div><!-- /main-content-inner -->
+
+<script>
+  const ACCESS_CODE = 'WC2026';
+  const SESSION_KEY = 'toilet_doc_auth';
+
+  function checkAuth() {
+    return sessionStorage.getItem(SESSION_KEY) === 'true';
+  }
+
+  function showMain() {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('main-content-inner').style.display = 'block';
+  }
+
+  function tryUnlock() {
+    const val = document.getElementById('code-input').value.trim().toUpperCase();
+    if (val === ACCESS_CODE) {
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      showMain();
+    } else {
+      const err = document.getElementById('code-error');
+      err.style.display = 'block';
+      document.getElementById('code-input').value = '';
+      document.getElementById('code-input').focus();
+      setTimeout(() => { err.style.display = 'none'; }, 2500);
+    }
+  }
+
+  function switchTab(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const inner = document.getElementById('main-content-inner');
+    if (checkAuth()) {
+      inner.style.display = 'block';
+      document.getElementById('lock-screen').style.display = 'none';
+    } else {
+      inner.style.display = 'none';
+      document.getElementById('lock-screen').style.display = 'flex';
+      document.getElementById('code-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  });
+</script>
+
+<!-- LOCK SCREEN -->
+<div id="lock-screen" style="display:none; position:fixed; inset:0; background:#0a0a0a; z-index:9999; flex-direction:column; align-items:center; justify-content:center; gap:0;">
+  <div style="font-family:'Bebas Neue',sans-serif; font-size:10px; letter-spacing:6px; color:#c9a84c; margin-bottom:32px;">SUMIDA WARD PARKS DIVISION</div>
+  <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:18px; color:#e8e0d0; letter-spacing:3px; margin-bottom:8px;">公衆トイレ改築 資料集</div>
+  <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:300; font-size:11px; color:#555; letter-spacing:2px; margin-bottom:48px;">INTERNAL DOCUMENT · RESTRICTED</div>
+
+  <div style="width:280px;">
+    <div style="font-size:10px; letter-spacing:3px; color:#666; margin-bottom:10px; font-family:'Bebas Neue',sans-serif;">ACCESS CODE</div>
+    <input id="code-input" type="password" maxlength="20" autocomplete="off"
+      style="width:100%; background:#111; border:1px solid #2a2a2a; border-radius:2px; color:#e8e0d0; font-family:'Zen Kaku Gothic New',sans-serif; font-size:20px; letter-spacing:8px; padding:14px 18px; outline:none; text-align:center; transition:border-color 0.3s;"
+      onfocus="this.style.borderColor='#c9a84c'" onblur="this.style.borderColor='#2a2a2a'"
+      placeholder="······">
+    <div id="code-error" style="display:none; margin-top:10px; font-size:11px; color:#c04a4a; letter-spacing:2px; text-align:center;">コードが正しくありません</div>
+    <button onclick="tryUnlock()"
+      style="margin-top:16px; width:100%; background:#c9a84c; border:none; border-radius:2px; color:#0a0a0a; font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:4px; padding:14px; cursor:pointer; transition:background 0.2s;"
+      onmouseover="this.style.background='#dbb85e'" onmouseout="this.style.background='#c9a84c'">
+      UNLOCK
+    </button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT WRAPPER END -->
+</body>
+</html>
